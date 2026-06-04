@@ -139,6 +139,27 @@ fig_companies = px.bar(
 
 st.plotly_chart(fig_companies, use_container_width=True)
 
-st.write("Dataset Preview")
+st.subheader("Salary Distribution")
 
-st.dataframe(df.head())
+salary_df = df[
+    (df["normalized_salary"].notna()) &
+    (df["normalized_salary"] <= 300000)
+]
+
+fig_salary = px.histogram(
+    salary_df,
+    x="normalized_salary",
+    nbins=30,
+    title="Salary Distribution"
+)
+
+st.plotly_chart(fig_salary, use_container_width=True)
+
+st.markdown("---")
+st.markdown(
+    """
+    **Built by Vinay**  
+    Dataset: LinkedIn Job Postings  
+    Tools: Python, Pandas, Streamlit, Plotly
+    """
+)
