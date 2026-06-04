@@ -1,5 +1,8 @@
 # Job Market Analytics Dashboard
 
+## Live Dashboard
+https://job-market-analysis-vinay.streamlit.app/
+
 ## Project Overview
 
 This project analyzes over 123,000 job postings to identify trends in hiring, experience requirements, work types, locations, and salary distributions.
